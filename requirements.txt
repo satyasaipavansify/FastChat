@@ -1,0 +1,4 @@
+"fschat[model_worker,webui]"
+gradio==3.42.0
+pydantic-settings
+python-dotenv

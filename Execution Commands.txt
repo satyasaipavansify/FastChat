@@ -1,0 +1,12 @@
+python -m fastchat.serve.controller --host 0.0.0.0
+# Local: python -m fastchat.serve.controller --host 127.0.0.1
+
+python -m fastchat.serve.model_worker --model-path meditron-70b --device cpu --load-8bit --host 0.0.0.0 --controller-address http://0.0.0.0:21001 
+--device cuda for gpu , --load-8bit for quantization 
+# Local: python -m fastchat.serve.model_worker --model-path meditron-70b --device cuda --load-8bit --cpu-offloading --host 127.0.0.1 --controller-address http://127.0.0.1:21001 --conv-template raw
+
+python -m fastchat.serve.gradio_web_server --host 0.0.0.0 --share
+# Local: python -m fastchat.serve.gradio_web_server --host 127.0.0.1 --share
+
+python -m fastchat.serve.openai_api_server --host 0.0.0.0 --controller-address http://0.0.0.0:21001 --port 8000
+# Local: python -m fastchat.serve.openai_api_server --host 127.0.0.1 --controller-address http://127.0.0.1:21001 --port 8000
