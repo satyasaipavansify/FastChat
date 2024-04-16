@@ -2,4 +2,4 @@ fschat
 fschat[model_worker,webui]
 pydantic-settings==2.2.0
 python-dotenv
-gradio==3.42.0
+gradio>=3.42.0
