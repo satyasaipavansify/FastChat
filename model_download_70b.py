@@ -20,7 +20,7 @@ all_files=[
     "tokenizer.model"
     ]
 
-token = "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"
+token = ""
 for items in all_files:
     print(f"Started downloading of the following item: {items}")
     hf_hub_download(local_dir="./meditron-70b",repo_id="epfl-llm/meditron-70b", filename=items, use_auth_token=token)
